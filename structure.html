@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gear Cutting Machine Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Расчет параметров зубо-фрезерного станка</h1>
+    <form id="calculator">
+        <label>
+            Модуль (m):
+            <input type="number" id="module" required>
+        </label><br><br>
+        <label>
+            Число зубьев (z):
+            <input type="number" id="teeth" required>
+        </label><br><br>
+        <label>
+            Угол профиля зуба (α) в градусах:
+            <input type="number" id="angle" required>
+        </label><br><br>
+        <label>
+            Коэффициент смещения (x):
+            <input type="number" id="shift" required>
+        </label><br><br>
+        <button type="submit">Рассчитать</button>
+    </form>
+
+    <h2>Результаты:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Параметр</th>
+                <th>Значение</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+            <tr>
+                <td>Делительный диаметр (d)</td>
+                <td id="diameter"></td>
+            </tr>
+            <tr>
+                <td>Диаметр окружности вершин (da)</td>
+                <td id="addendumDiameter"></td>
+            </tr>
+            <tr>
+                <td>Диаметр окружности впадин (df)</td>
+                <td id="dedendumDiameter"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>График:</h2>
+    <canvas id="chart" width="400" height="200"></canvas>
+
+    <h2>Визуализация зубчатого колеса:</h2>
+    <canvas id="gearCanvas" width="500" height="500"></canvas>
+
+    <script src="./index.js"></script>
+</body>
+</html>
